@@ -35,7 +35,7 @@ gradient_accumulation_steps: 2
 gradient_checkpointing: true
 gradient_checkpointing_kwargs:
   use_reentrant: false
-hub_model_id: zenka-7b-sft-qlora
+hub_model_id: zenka-7b-sft-qlora-e10
 hub_strategy: every_save
 learning_rate: 2.0e-04
 log_level: info
@@ -44,8 +44,8 @@ logging_strategy: steps
 lr_scheduler_type: cosine
 max_seq_length: 2048
 max_steps: -1
-num_train_epochs: 1
-output_dir: data/zenka-7b-sft-qlora
+num_train_epochs: 10
+output_dir: data/zenka-7b-sft-qlora-e10
 overwrite_output_dir: true
 per_device_eval_batch_size: 8
 per_device_train_batch_size: 4
@@ -54,7 +54,7 @@ push_to_hub: true
 report_to:
 - tensorboard
 save_strategy: "steps"
-save_steps: 100
+save_steps: 50
 save_total_limit: 1
 seed: 42
 warmup_ratio: 0.1
