@@ -76,10 +76,14 @@ def get_tokenizer(model_args: ModelArguments, data_args: DataArguments) -> PreTr
 
     # Set reasonable default for models without max length
     if tokenizer.model_max_length > 100_000:
-        tokenizer.model_max_length = 2048
+        #tokenizer.model_max_length = 2048
+        tokenizer.model_max_length = 4024
+        
 
     if data_args.chat_template is not None:
         tokenizer.chat_template = data_args.chat_template
+        print("setting up chat template")
+
     elif tokenizer.chat_template is None and tokenizer.default_chat_template is None:
         tokenizer.chat_template = DEFAULT_CHAT_TEMPLATE
 
